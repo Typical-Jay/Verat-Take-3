@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,12 +12,14 @@ namespace Verat
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            Debug.Write("Hello? Start up?");
+            var mp = new MainPage();
+            mp.reloadItems();
         }
 
         protected override void OnSleep()

@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Verat.NewItemPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Formf!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="Gray">
+            <Label Text="New Item"
+               HorizontalOptions="Center"
+               Margin="0,0,0,0"
+               Font="Bold"
+               FontSize="60" 
+               TextColor="Coral"
+               HeightRequest="80"/> 
+            <Editor FontSize="30"
+               TextColor="Coral" 
+               x:Name="NameTextEditor"/>
+            <Button Text="Add"
+               BackgroundColor="Coral"
+               TextColor="Gray"
+               Clicked="Button_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,12 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Verat"
              x:Class="Verat.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="DimGray">
+        <Label Text="Verat"
+               HorizontalOptions="Center"
+               Margin="0,0,0,0"
+               Font="Bold"
+               FontSize="61" 
+               TextColor="Coral"  
+               HeightRequest="80"
+               VerticalOptions="Start"/>
+        <ScrollView VerticalOptions="StartAndExpand"
+                    HorizontalOptions="Center"
+                    WidthRequest="330"
+                    HeightRequest="560"
+                    x:Name="ScrollFrame"
+                    BackgroundColor="Coral">
+            <StackLayout BackgroundColor="Coral" 
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Button BackgroundColor="Red" 
+                        Text="Hello?" />
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
