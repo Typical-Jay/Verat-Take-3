@@ -12,13 +12,14 @@
                TextColor="Coral"  
                HeightRequest="80"
                VerticalOptions="Start"/>
-        <ScrollView VerticalOptions="StartAndExpand"
+        <ScrollView VerticalOptions="Start"
                     HorizontalOptions="Center"
                     WidthRequest="330"
                     HeightRequest="560"
                     x:Name="ScrollFrame"
-                    BackgroundColor="Coral">
-            <StackLayout BackgroundColor="Coral" 
+                    BackgroundColor="Yellow"
+                    IsVisible="False">
+            <StackLayout BackgroundColor="Green" 
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
                 <Button BackgroundColor="Red" 
