@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage BackgroundColor="Black" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Verat"
              x:Class="Verat.MainPage">
-    <StackLayout BackgroundColor="DimGray">
-        <Label Text="Verat"
+    <StackLayout BackgroundColor="Orange">
+        <Label Text="Veraxt"
                HorizontalOptions="Center"
                Margin="0,0,0,0"
                Font="Bold"
                FontSize="61" 
                TextColor="Coral"  
-               HeightRequest="80"
-               VerticalOptions="Start"/>
-        <ScrollView VerticalOptions="Start"
+               VerticalOptions="Start"
+               BackgroundColor="Purple"/>
+        <BoxView BackgroundColor="Teal">
+            
+        </BoxView>
+        <ScrollView
                     HorizontalOptions="Center"
-                    WidthRequest="330"
-                    HeightRequest="560"
                     x:Name="ScrollFrame"
-                    BackgroundColor="Yellow"
-                    IsVisible="False">
+                    BackgroundColor="Yellow">
             <StackLayout BackgroundColor="Green" 
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand">
