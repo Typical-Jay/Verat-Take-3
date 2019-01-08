@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,13 @@ namespace Verat
             if (Application.Current.Properties.ContainsKey("listOfItem"))
             {
                 items = Application.Current.Properties["listOfItem"] as List<Item>;
+                Debug.Write("Old DataStore");
             }
             else
             {
                 Application.Current.Properties.Add("listOfItem", new List<Item>());
                 items = Application.Current.Properties["listOfItem"] as List<Item>;
+                Debug.Write("New DataStore");
             }
 
             reloadItems();
@@ -32,6 +35,7 @@ namespace Verat
 
         public void reloadItems()
         {
+            Debug.Write("Reloaded");
             scrollFrame.Content = null;
 
             foreach (Item item in items)
@@ -39,30 +43,33 @@ namespace Verat
                 newItem(item.Name, item.Done);
             }
 
-            Button newButton = new Button();
-
-            newButton.Parent = scrollFrame;
-            newButton.Text = "Add Item";
-            newButton.HorizontalOptions = LayoutOptions.FillAndExpand;
-            newButton.Margin = new Thickness(0, 5);
-            newButton.HeightRequest = 50;
-            newButton.Font = Font.OfSize("Bold", 24);
-            newButton.FontSize = 24;
-            newButton.TextColor = Color.Coral;
-            newButton.BackgroundColor = Color.DimGray;
+            Button newButton = new Button
+            {
+                Parent = scrollFrame,
+                Text = "Add Item",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(0, 5),
+                HeightRequest = 50,
+                Font = Font.OfSize("Bold", 24),
+                FontSize = 24,
+                TextColor = Color.Coral,
+                BackgroundColor = Color.DimGray
+            };
+            Debug.Write("NewItem Button Added");
             newButton.Clicked += CreateNew_Clicked;
         }
 
         public void newItem(string name, bool done)
         {
-            Button newButton = new Button();
-
-            newButton.Parent = scrollFrame;
-            newButton.Text = name;
-            newButton.HorizontalOptions = LayoutOptions.FillAndExpand;
-            newButton.Margin = new Thickness(0, 5);
-            newButton.HeightRequest = 50;
-            newButton.Font = Font.OfSize("Bold", 24);
+            Button newButton = new Button
+            {
+                Parent = scrollFrame,
+                Text = name,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(0, 5),
+                HeightRequest = 50,
+                Font = Font.OfSize("Bold", 24)
+            };
             if (done)
             {
                 newButton.FontSize = 26;
