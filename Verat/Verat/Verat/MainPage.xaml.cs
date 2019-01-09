@@ -21,7 +21,7 @@ namespace Verat
             if (Application.Current.Properties.ContainsKey("listOfItem"))
             {
                 items = Application.Current.Properties["listOfItem"] as List<Item>;
-                Debug.Write("Old DataStore");
+                Debug.Write("Old DataStore"); 
             }
             else
             {
@@ -53,10 +53,22 @@ namespace Verat
                 Font = Font.OfSize("Bold", 24),
                 FontSize = 24,
                 TextColor = Color.Coral,
-                BackgroundColor = Color.DimGray
+                BackgroundColor = Color.DimGray,
             };
+
+           // newButton
+
             Debug.Write("NewItem Button Added");
             newButton.Clicked += CreateNew_Clicked;
+
+            if (scrollFrame.Content.FindByName("gg") == null)
+            {
+                Debug.Write("Null... and wow this worked");
+            }
+            else
+            {
+                Debug.Write("Not Null... and wow this worked");
+            }
         }
 
         public void newItem(string name, bool done)
