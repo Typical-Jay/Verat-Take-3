@@ -12,6 +12,7 @@ namespace Verat
     {
         ScrollView scrollFrame;
         List<Item> items;
+        View debugWatchVar;
 
         public MainPage()
         {
@@ -56,19 +57,10 @@ namespace Verat
                 BackgroundColor = Color.DimGray,
             };
 
-           // newButton
+            debugWatchVar = scrollFrame.Content;
 
             Debug.Write("NewItem Button Added");
             newButton.Clicked += CreateNew_Clicked;
-
-            if (scrollFrame.Content.FindByName("gg") == null)
-            {
-                Debug.Write("Null... and wow this worked");
-            }
-            else
-            {
-                Debug.Write("Not Null... and wow this worked");
-            }
         }
 
         public void newItem(string name, bool done)
