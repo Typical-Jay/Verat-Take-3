@@ -4,11 +4,9 @@
              xmlns:local="clr-namespace:Verat"
              x:Class="Verat.MainPage">
     <ScrollView
-         x:Name="ScrollFrame"
          BackgroundColor="Yellow">
-        <StackLayout BackgroundColor="Green">  
-            <Button BackgroundColor="Red"  
-                    Text="Hello?" />
+        <StackLayout BackgroundColor="Green"
+                     x:Name="stacklayout">  
         </StackLayout>
     </ScrollView>
 </ContentPage>

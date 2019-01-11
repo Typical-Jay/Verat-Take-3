@@ -10,14 +10,13 @@ namespace Verat
 {
     public partial class MainPage : ContentPage
     {
-        ScrollView scrollFrame;
+        StackLayout stackLayout;
         List<Item> items;
-        View debugWatchVar;
 
         public MainPage()
         {
             InitializeComponent();
-            scrollFrame = ScrollFrame;
+            stackLayout = stacklayout;
 
             if (Application.Current.Properties.ContainsKey("listOfItem"))
             {
@@ -37,7 +36,7 @@ namespace Verat
         public void reloadItems()
         {
             Debug.Write("Reloaded");
-            scrollFrame.Content = null;
+            stackLayout.Children.Clear();
 
             foreach (Item item in items)
             {
@@ -46,7 +45,7 @@ namespace Verat
 
             Button newButton = new Button
             {
-                Parent = scrollFrame,
+                Parent = stackLayout,
                 Text = "Add Item",
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
@@ -57,8 +56,7 @@ namespace Verat
                 BackgroundColor = Color.DimGray,
             };
 
-            debugWatchVar = scrollFrame.Content;
-
+            stackLayout.Children.Add(newButton);
             Debug.Write("NewItem Button Added");
             newButton.Clicked += CreateNew_Clicked;
         }
@@ -67,25 +65,26 @@ namespace Verat
         {
             Button newButton = new Button
             {
-                Parent = scrollFrame,
+                Parent = stacklayout,
                 Text = name,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
                 HeightRequest = 50,
-                Font = Font.OfSize("Bold", 24)
-            };
+                Font = Font.OfSize("Bold", 24),
+                TextColor = Color.Coral
+        };
             if (done)
             {
-                newButton.FontSize = 26;
+                newButton.BackgroundColor = Color.Coral;
             }
             else
             {
-                newButton.FontSize = 22;
+                newButton.BackgroundColor = Color.DimGray;
             }
-            newButton.TextColor = Color.Coral;
-            newButton.BackgroundColor = Color.DimGray;
-            newButton.Clicked += Done_Clicked;
 
+            stackLayout.Children.Add(newButton);
+
+            newButton.Clicked += Done_Clicked;
         }
 
         public void newItemReply(string name)
@@ -117,7 +116,7 @@ namespace Verat
         {
             public string Name { get; set; }
             public bool Done { get; set; }
-
+             
             public Item(string name, bool done)
             {
                 Name = name;
