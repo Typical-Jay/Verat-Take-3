@@ -45,7 +45,6 @@ namespace Verat
 
             Button newButton = new Button
             {
-                Parent = stackLayout,
                 Text = "Add Item",
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
@@ -65,7 +64,6 @@ namespace Verat
         {
             Button newButton = new Button
             {
-                Parent = stacklayout,
                 Text = name,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
