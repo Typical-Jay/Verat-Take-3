@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,7 +16,6 @@ namespace Verat
 
         protected override void OnStart()
         {
-            Debug.Write("Hello? Start up?");
             var mp = new MainPage();
             mp.reloadItems();
         }
@@ -29,7 +27,8 @@ namespace Verat
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            var mp = new MainPage();
+            mp.reloadItems();
         }
     }
 }

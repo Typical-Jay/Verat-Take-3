@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+ 
 namespace Verat
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
         Editor editor;
-
+         
         public NewItemPage()
         {
             InitializeComponent();
             editor = NameTextEditor;
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);
 
         }
 

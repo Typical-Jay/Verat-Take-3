@@ -17,6 +17,8 @@ namespace Verat
         {
             InitializeComponent();
             stackLayout = stacklayout;
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);
 
             if (Application.Current.Properties.ContainsKey("listOfItem"))
             {
@@ -50,6 +52,7 @@ namespace Verat
                 Margin = new Thickness(0, 5),
                 HeightRequest = 50,
                 Font = Font.OfSize("Bold", 24),
+                WidthRequest = 350,
                 FontSize = 24,
                 TextColor = Color.Coral,
                 BackgroundColor = Color.DimGray,
@@ -68,16 +71,17 @@ namespace Verat
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
                 HeightRequest = 50,
-                Font = Font.OfSize("Bold", 24),
-                TextColor = Color.Coral
-        };
+                TextColor = Color.Coral,
+                WidthRequest = 300,
+                BackgroundColor = Color.DimGray
+            };
             if (done)
             {
-                newButton.BackgroundColor = Color.Coral;
+                newButton.Font = Font.OfSize("Bold", 24);
             }
             else
             {
-                newButton.BackgroundColor = Color.DimGray;
+                newButton.Font = Font.OfSize("Bold", 24);
             }
 
             stackLayout.Children.Add(newButton);
@@ -90,8 +94,8 @@ namespace Verat
             items.Add(new Item(name, false));
             Application.Current.Properties["listOfItem"] = items;
             reloadItems();
+            
         }
-
 
         private void CreateNew_Clicked(object sender, EventArgs e)
         {
@@ -105,6 +109,14 @@ namespace Verat
                 if (item.Name == (sender as Button).Text)
                 {
                     item.Done = !item.Done;
+                    if (item.Done)
+                    {
+                        (sender as Button).Font = Font.OfSize("Bold", 24);
+                    }
+                    else
+                    {
+                        (sender as Button).Font = Font.OfSize("Bold", 24);
+                    }
                 }
             }
             Application.Current.Properties["listOfItem"] = items;
