@@ -24,8 +24,11 @@ namespace Verat
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            new MainPage().newItemReply(editor.Text);
-            Navigation.PushAsync(new MainPage());
+            if (editor.Text != null)
+            {
+                new MainPage().newItemReply(editor.Text);
+                Navigation.PushAsync(new MainPage());
+            } 
         } 
     }
 }

@@ -71,7 +71,7 @@ namespace Verat
                 Margin = new Thickness(0, 5),
                 HeightRequest = 50,
                 TextColor = Color.Coral,
-                WidthRequest = 300,
+                WidthRequest = 150,
                 BackgroundColor = Color.DimGray
             };
             if (done)
@@ -90,10 +90,28 @@ namespace Verat
 
         public void newItemReply(string name)
         {
-            items.Add(new Item(name, false));
+
+            bool check = false;
+
+            foreach (Item item in items)
+            {
+                if (item.Name == name)
+                {
+                    check = true;
+                }
+            }
+
+            if (check == false)
+            {
+                items.Add(new Item(name, false));
+            }
+            else
+            {
+                items.Add(new Item(name + " Copy", false));
+            }
+
             Application.Current.Properties["listOfItem"] = items;
             reloadItems();
-            
         }
 
         private void CreateNew_Clicked(object sender, EventArgs e)
