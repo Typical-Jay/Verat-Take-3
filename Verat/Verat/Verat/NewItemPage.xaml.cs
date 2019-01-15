@@ -16,10 +16,9 @@ namespace Verat
          
         public NewItemPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             editor = NameTextEditor;
             NavigationPage.SetHasNavigationBar(this, false);
-            NavigationPage.SetHasBackButton(this, false);
 
         }
 
@@ -27,6 +26,6 @@ namespace Verat
         {
             new MainPage().newItemReply(editor.Text);
             Navigation.PushAsync(new MainPage());
-        }
+        } 
     }
 }

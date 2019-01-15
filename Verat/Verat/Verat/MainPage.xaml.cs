@@ -18,7 +18,6 @@ namespace Verat
             InitializeComponent();
             stackLayout = stacklayout;
             NavigationPage.SetHasNavigationBar(this, false);
-            NavigationPage.SetHasBackButton(this, false);
 
             if (Application.Current.Properties.ContainsKey("listOfItem"))
             {

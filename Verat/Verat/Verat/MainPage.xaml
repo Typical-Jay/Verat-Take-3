@@ -5,7 +5,7 @@
              x:Class="Verat.MainPage">
     <ScrollView
          BackgroundColor="Coral">
-        <StackLayout BackgroundColor="Coral"
+        <StackLayout BackgroundColor="Coral" 
                      x:Name="stacklayout">  
         </StackLayout>
     </ScrollView>
