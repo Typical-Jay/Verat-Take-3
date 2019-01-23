@@ -49,9 +49,9 @@ namespace Verat
                 Text = "Add Item",
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
-                HeightRequest = 50,
+                HeightRequest = 25,
                 Font = Font.OfSize("Bold", 24),
-                WidthRequest = 350,
+                WidthRequest = 500,
                 FontSize = 24,
                 TextColor = Color.Coral,
                 BackgroundColor = Color.DimGray,
@@ -69,18 +69,19 @@ namespace Verat
                 Text = name,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
-                HeightRequest = 50,
+                HeightRequest = 25,
                 TextColor = Color.Coral,
-                WidthRequest = 150,
-                BackgroundColor = Color.DimGray
-            };
+                WidthRequest = 500,
+                Font = Font.OfSize("Bold", 24)
+        };
             if (done)
             {
-                newButton.Font = Font.OfSize("Bold", 24);
+
+                BackgroundColor = Color.DimGray;
             }
             else
             {
-                newButton.Font = Font.OfSize("Bold", 24);
+                BackgroundColor = Color.DarkGray;
             }
 
             stackLayout.Children.Add(newButton);
@@ -121,22 +122,36 @@ namespace Verat
 
         private void Done_Clicked(object sender, EventArgs e)
         {
+
+            Button button = sender as Button;
+
             foreach (Item item in items)
             {
-                if (item.Name == (sender as Button).Text)
+                if (item.Name == button.Text)
                 {
                     item.Done = !item.Done;
+
                     if (item.Done)
                     {
-                        (sender as Button).Font = Font.OfSize("Bold", 24);
+                        BackgroundColor = Color.DimGray;
                     }
                     else
                     {
-                        (sender as Button).Font = Font.OfSize("Bold", 24);
+                        Debug.Write("Item Button Removed");
+                        items.Remove(item);
                     }
                 }
             }
+
+            foreach (Item item in items)
+            {
+                if (item.Name == button.Text)
+                {
+                    Debug.Write("Dead Button found");
+                }
+            }
             Application.Current.Properties["listOfItem"] = items;
+            reloadItems();
         }
 
         class Item
