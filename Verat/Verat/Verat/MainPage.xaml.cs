@@ -47,11 +47,10 @@ namespace Verat
             Button newButton = new Button
             {
                 Text = "Add Item",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
-                HeightRequest = 25,
+                HeightRequest = 50,
                 Font = Font.OfSize("Bold", 24),
-                WidthRequest = 500,
+                WidthRequest = 100,
                 FontSize = 24,
                 TextColor = Color.Coral,
                 BackgroundColor = Color.DimGray,
@@ -67,11 +66,10 @@ namespace Verat
             Button newButton = new Button
             {
                 Text = name,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
                 Margin = new Thickness(0, 5),
-                HeightRequest = 25,
+                HeightRequest = 50,
                 TextColor = Color.Coral,
-                WidthRequest = 500,
+                WidthRequest = 100,
                 Font = Font.OfSize("Bold", 24)
         };
             if (done)
@@ -133,15 +131,19 @@ namespace Verat
 
                     if (item.Done)
                     {
-                        BackgroundColor = Color.DimGray;
+                        button.BackgroundColor = Color.DimGray;
                     }
                     else
                     {
                         Debug.Write("Item Button Removed");
                         items.Remove(item);
+                        Debug.Write("Continues 1");
                     }
                 }
+                Debug.Write("Continues 2");
             }
+
+            Debug.Write("Continues 3");
 
             foreach (Item item in items)
             {
