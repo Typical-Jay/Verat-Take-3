@@ -8,16 +8,20 @@
                HorizontalOptions="Center"
                Margin="0,0,0,0"
                Font="Bold"
-               FontSize="60" 
+               FontSize="45" 
                TextColor="Coral"
                HeightRequest="80"/> 
             <Editor FontSize="30"
+               Margin="14,0,14,0"
                TextColor="Coral" 
                x:Name="NameTextEditor"/>
             <Button Text="Add"
+               Margin="14,0,14,0"
                BackgroundColor="Coral"
                TextColor="Gray"
-               Clicked="Button_Clicked"/>
+               Clicked="Button_Clicked"
+               FontSize="24"/>
+            
 
         </StackLayout>
     </ContentPage.Content>

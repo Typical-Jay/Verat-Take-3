@@ -47,7 +47,7 @@ namespace Verat
             Button newButton = new Button
             {
                 Text = "Add Item",
-                Margin = new Thickness(0, 5),
+                Margin = new Thickness(14,14,14,0),
                 HeightRequest = 50,
                 Font = Font.OfSize("Bold", 24),
                 WidthRequest = 100,
@@ -66,7 +66,7 @@ namespace Verat
             Button newButton = new Button
             {
                 Text = name,
-                Margin = new Thickness(0, 5),
+                Margin = new Thickness(14, 14, 14, 0),
                 HeightRequest = 50,
                 TextColor = Color.Coral,
                 WidthRequest = 100,
@@ -75,11 +75,11 @@ namespace Verat
             if (done)
             {
 
-                BackgroundColor = Color.DimGray;
+                newButton.BackgroundColor = Color.DimGray;
             }
             else
             {
-                BackgroundColor = Color.DarkGray;
+                newButton.BackgroundColor = Color.SlateGray;
             }
 
             stackLayout.Children.Add(newButton);
@@ -129,11 +129,7 @@ namespace Verat
                 {
                     item.Done = !item.Done;
 
-                    if (item.Done)
-                    {
-                        button.BackgroundColor = Color.Red;
-                    }
-                    else
+                    if (item.Done == false)
                     {
                         items.Remove(item);
                     }
