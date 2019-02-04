@@ -131,27 +131,16 @@ namespace Verat
 
                     if (item.Done)
                     {
-                        button.BackgroundColor = Color.DimGray;
+                        button.BackgroundColor = Color.Red;
                     }
                     else
                     {
-                        Debug.Write("Item Button Removed");
                         items.Remove(item);
-                        Debug.Write("Continues 1");
                     }
-                }
-                Debug.Write("Continues 2");
-            }
-
-            Debug.Write("Continues 3");
-
-            foreach (Item item in items)
-            {
-                if (item.Name == button.Text)
-                {
-                    Debug.Write("Dead Button found");
+                    break;
                 }
             }
+
             Application.Current.Properties["listOfItem"] = items;
             reloadItems();
         }
