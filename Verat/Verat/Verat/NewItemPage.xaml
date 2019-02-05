@@ -14,6 +14,9 @@
             <Editor FontSize="30"
                Margin="14,0,14,0"
                TextColor= "#A9664C"
+               Placeholder="Item name"
+               BackgroundColor="Gray"
+ 
                x:Name="NameTextEditor"/>
             <Button Text="Add"
                Margin="14,0,14,0"
