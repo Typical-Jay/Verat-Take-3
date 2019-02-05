@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:Verat"
              x:Class="Verat.MainPage">
     <ScrollView
-         BackgroundColor="Coral">
-        <StackLayout BackgroundColor="Coral" 
+         BackgroundColor="#A9664C">
+        <StackLayout BackgroundColor="#A9664C" 
                      x:Name="stacklayout">  
         </StackLayout>
     </ScrollView>

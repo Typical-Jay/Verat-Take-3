@@ -52,7 +52,7 @@ namespace Verat
                 Font = Font.OfSize("Bold", 24),
                 WidthRequest = 100,
                 FontSize = 24,
-                TextColor = Color.Coral,
+                TextColor = Color.FromHex("#A9664C"),
                 BackgroundColor = Color.DimGray,
             };
 
@@ -68,7 +68,7 @@ namespace Verat
                 Text = name,
                 Margin = new Thickness(14, 14, 14, 0),
                 HeightRequest = 50,
-                TextColor = Color.Coral,
+                TextColor = Color.FromHex("#A9664C"),
                 WidthRequest = 100,
                 Font = Font.OfSize("Bold", 24)
         };
